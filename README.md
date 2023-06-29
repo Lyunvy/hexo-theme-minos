@@ -1,3 +1,5 @@
+由于[原仓库](https://github.com/ppoffice/hexo-theme-minos)归档不再维护，开此仓库自用维护。
+
 参考[原仓库文档](https://github.com/ppoffice/hexo-theme-minos)
 
 使用主题前需安装必要模块：
