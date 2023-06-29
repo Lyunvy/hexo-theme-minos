@@ -1,5 +1,10 @@
 <section class="section">
     <div class="container">
+        <div>
+            <h4 class="title is-5" id="<%= site.posts.length%>">目前共计 <%= site.posts.length%> 篇日志</h4>
+            <%= __('wordabout') %>&nbsp;<%= totalcount(site) %>&nbsp;<%= __('words') %>
+        </div>
+        <br>
     <% const groups = {};
     const years = [];
     page.posts.each(post => {

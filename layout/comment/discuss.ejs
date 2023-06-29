@@ -1,0 +1,17 @@
+<style>
+  .D-input * {
+    background: #ffffff00 !important;
+  }
+</style>
+<script src="//cdn.jsdelivr.net/npm/discuss@1.2.3/dist/discuss.js"></script>
+<div id="discuss"></div>
+<script>
+  // 初始化
+  discuss.init({
+    el: '#discuss',
+    serverURLs: '',
+    path: window.location.href.replace(/(\/?(\#|\?)\S*)|(\/)$/,''),
+    color: '#000000',
+    ph: ''
+  })
+</script>

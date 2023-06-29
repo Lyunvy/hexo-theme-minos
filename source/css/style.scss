@@ -160,17 +160,12 @@ a.tag.article-tag {
         text-align: center;
     }
 
-    a[target="_blank"] {
+    .article-entry a[target="_blank"] {
         &:after {
-            display: none;
+            font-family: "Font Awesome 5 Free";
             content: "\f35d";
-            font-size: .8rem;
-            font-family: "Font Awesome 5 Solid";
-        }
-
-        .fa-external-link-alt {
-            margin-left: .3rem;
-            width: .8rem;
+            font-weight: bold;
+            margin-left: 0.3rem;
         }
     }
 
@@ -348,7 +343,7 @@ a.tag.article-tag {
     background: transparent;
 
     .content {
-        padding-top: 2rem;
+        padding-top: 1rem;
         border-top: 1px solid $border-color;
     }
 }

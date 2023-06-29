@@ -1,30 +1,47 @@
 <footer class="footer">
     <div class="container">
-        <div class="columns content">
+        <div class="columns is-vcentered content">
             <div class="column is-narrow has-text-centered">
-                &copy; <%= date(new Date(), 'YYYY') %> <%= get_config('author') || get_config('title') %>&nbsp;
-                <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                <%= date(new Date(), 'YYYY') %> &copy; <%= get_config('author') || get_config('title') %><br>
+                <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank" style="color: #4a4a4a;">Hexo</a> &  <a href="//github.com/Lyunvy/hexo-theme-minos" target="_blank" style="color: #4a4a4a;">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
 
-            <% if (has_config('footer_links')) { %>
+            <% if (has_config('footer_img')) { %>
             <div class="column is-narrow">
-                <div class="columns is-mobile is-multiline is-centered">
-                <% for (let name in get_config('footer_links')) { %>
-                    <% let link = get_config('footer_links')[name]; %>
-                <a class="column is-narrow has-text-black" title="<%= name %>" href="<%= typeof(link) === 'string' ? link : link.url%>">
+                <div class="columns is-vcentered is-mobile is-multiline is-centered">
+                <% for (let name in get_config('footer_img')) { %>
+                    <% let link = get_config('footer_img')[name]; %>
+                <a class="column is-narrow has-text-black" title="<%= name %>" data-umami-event="<%= name %>" href="<%= typeof(link) === 'string' ? link : link.url%>">
                     <% if (typeof(link) === 'string') { %>
                     <%= name %>
                     <% } else { %>
-                    <i class="<%= link.icon %>"></i>
+                    <img src="<%= link.pic %>" no-lazy alt="<%= name %>" style="height: 1.2em;display: block;">
                     <% } %>
                 </a>
                 <% } %>
                 </div>
             </div>
+            <div class="column is-hidden-mobile is-centered is-narrow has-text-black"><div style="border-left: 1.5px dashed;height: 1rem;"></div></div>
             <% } %>
-            <%- partial('common/languages') %>
+            <% if (has_config('footer_links')) { %>
+                <div class="column is-narrow">
+                    <div class="columns is-vcentered is-mobile is-multiline is-centered">
+                    <% for (let name in get_config('footer_links')) { %>
+                        <% let link = get_config('footer_links')[name]; %>
+                    <a class="column is-narrow has-text-black" title="<%= name %>" data-umami-event="<%= name %>" href="<%= typeof(link) === 'string' ? link : link.url%>">
+                        <% if (typeof(link) === 'string') { %>
+                        <%= name %>
+                        <% } else if (link.icon !== undefined) { %>
+                        <i class="<%= link.icon %>"></i>
+                        <% } else {%>
+                            <img src="<%= link.img %>" no-lazy alt="<%= name %>" style="height: 1em;display: block;">
+                        <% } %>
+                    </a>
+                    <% } %>
+                    </div>
+                </div>
+            <% } %>
         </div>
     </div>
-</footer>
+  </footer>

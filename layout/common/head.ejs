@@ -40,6 +40,8 @@ if (languages.length > 1) {
 <link rel="icon" href="<%- get_config('favicon') %>">
 <% } %>
 
+<meta property="og:image" content="<%- get_config('open_graph.home_image') %>" />
+
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 
@@ -49,10 +51,9 @@ if (languages.length > 1) {
 <% } %>
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/<%= get_config('article.highlight', 'atom-one-light') %>.min.css">
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.8/css/all.css">
 
 <%- css('css/style') %>
-
-<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
 <% if (has_config('plugins')) { %>
     <% for (let plugin in get_config('plugins')) { %>

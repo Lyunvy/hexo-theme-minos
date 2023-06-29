@@ -17,6 +17,7 @@ article:
   words: 'words'
   comments: 'Comments'
   contents: 'Contents'
+  min: 'Minutes'
 search:
   hint: 'Type something...'
 insight:
@@ -27,3 +28,5 @@ insight:
   tags: 'Tags'
   untitled: '(Untitled)'
 powered_by: 'Powered by'
+wordabout: 'Total About'
+words: 'Words'

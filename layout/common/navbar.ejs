@@ -17,10 +17,10 @@
                     <% if (has_config('logo.text') && get_config('logo.text')) { %>
                     <%= get_config('logo.text') %>
                     <% } else { %>
-                    <img src="<%- url_for(get_config('logo')) %>" alt="" height="28">
+                    <img no-lazy src="<%- url_for(get_config('logo')) %>" alt="" height="28">
                     <% } %>
                 <% } else { %>
-                <img src="<%- url_for('images/logo.png') %>" alt="" height="28">
+                <img no-lazy src="<%- url_for('images/logo.png') %>" alt="" height="28">
                 <% } %>
             </a>
             <div class="navbar-burger">
@@ -39,7 +39,7 @@
         <% } %>
         <div class="navbar-menu navbar-end">
             <% if (has_config('search')) { %>
-            <a class="navbar-item search" title="<%= __('nav.search') %>" href="javascript:;">
+            <a class="navbar-item search title="<%= __('nav.search') %>" data-umami-event="search" href="javascript:;">
                 <i class="fas fa-search"></i>
             </a>
             <% } %>
@@ -63,7 +63,7 @@
             <% if (has_config('navbar_links')) {
                 for (let name in get_config('navbar_links')) {
                     let link = get_config('navbar_links')[name]; %>
-            <a class="navbar-item" title="<%= name %>" href="<%= typeof(link) === 'string' ? link : link.url%>">
+            <a class="navbar-item" title="<%= name %>" data-umami-event="<%= name %>" href="<%= typeof(link) === 'string' ? link : link.url%>">
                 <% if (typeof(link) === 'string') { %>
                 <%= name %>
                 <% } else { %>

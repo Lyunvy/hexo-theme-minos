@@ -32,9 +32,8 @@
         <% } %>
         <% if (!has_config('article.readtime') || get_config('article.readtime') === true) { %>
         <span class="column is-narrow">
-            <% let words = word_count(post._content); %>
-            <% let time = duration((words / 150.0) * 60, 'seconds') %>
-            <%= `${ time.humanize() } ${ __('article.read')} (${ __('article.about') } ${ words } ${ __('article.words') })` %>
+            <!-- <%= `${ min2read(post.content) } ${ __('article.min')} ${ __('article.read')} (${ __('article.about') } ${ wordcount(post.content) } ${ __('article.words') })` %> -->
+            <%= `${ __('article.about') } ${ wordcount(post.content) } ${ __('article.words') }` %>
         </span>
         <% } %>
     </div>

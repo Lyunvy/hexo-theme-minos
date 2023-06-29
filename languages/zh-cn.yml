@@ -17,6 +17,7 @@ article:
   words: '字'
   comments: '评论'
   contents: '目录'
+  min: '分钟'
 search:
   hint: '站内搜索'
 insight:
@@ -26,3 +27,5 @@ insight:
   categories: '分类'
   tags: '标签'
   untitled: '(无标题)'
+wordabout: '约'
+words: '字'
